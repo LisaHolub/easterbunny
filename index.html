@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bunny, der kleine Osterhase</title>
+
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  </head>
+
+  <body>
+
+    <script>
+      function hilfesuchen() {
+        document.getElementById("hilfesuchen").innerHTML = ("<br><br><p>Bunny wird klar, dass er die ganzen Tätigkeiten niemals alleine noch rechtzeitig schaffen kann. Er beschließt, seinen kompletten Freundeskreis um Hilfe zu bitten. Ein paar Stunden später haben sich sämtliche Hasen in seinem Wohnzimmer versammelt und warten auf Anweisungen von Bunny. Wie geht es weiter:</p><br><button onclick='hilftnichtmit()'>Bunny vergibt an jedem seiner Freunde eine Aufgabe, vergisst dabei aber sich selbst.</button><button onclick='hilftmit()'>Bunny vergibt an jedem seiner Freunde eine Aufgabe und hilft selbst tatkräftig mit.</button>")
+      }
+
+      function einkaufen() {
+        document.getElementById("einkaufen").innerHTML = ("<br><br><p>Schnell eilt Bunny zum nächsten Supermarkt, wo er seinen Einkaufswagen mit Eiern, Farbe und Pinseln befüllt. Bei der Kassa trifft er auf einen guten Freund, der ihm gleich ansieht, dass etwas nicht stimmt. Wie reagiert Bunny?</p><br><button onclick='hilfesuchen()'>Sein Freund Rabbit glaubt ihm kein Wort und erkennt sofort, was los ist. Er fragt Bunny, wie er denn helfen könne.</button><button onclick='hilfesuchen()'>Sein Freund Rabbit tröstet Bunny und meint, dass noch nichts verloren sei und dass sie es gemeinsam schon schaffen werden.</button>")
+      }
+
+      function hilftmit() {
+        document.getElementById("hilftmit").innerHTML = ("<br><br><p>Bunnys Aufgabe ist es, die fertig bemalten Eier zum Trocknen ins Nebenzimmer zu tragen. Wie viele Eier soll Bunny auf einmal transportieren? Wähle eine Zahl zwischen 1 und 50:</p><br><input id='number' value=''><button onclick='rechne()'>Weiter geht's</button>")
+      }
+
+      function hilftnichtmit() {
+        document.getElementById("hilftnichtmit").innerHTML = ("<br><br><p>Seine Freunde beginnen mit der Arbeit. Sie bemalen die Eier, flechten die Osterkörbe und sammeln Stroh für die Deko. Doch bald bemerken sie, dass sich Bunny gemütlich in einen Liegestuhl gesetzt hat und nicht mithilft. Sie sprechen Bunny darauf an, was das denn soll. Wie reagiert Bunny?</p><br><button onclick='hilftmit()'>Er gibt verlegen zu, einen Fehler gemacht zu haben und packt endlich mit an.</button><button onclick='ueberblick()'>Er behauptet, seine Tätigkeit wäre, alles zu überblicken.</button>")
+      }
+
+      function ueberblick() {
+        document.getElementById("ueberblick").innerHTML = ("<br><br><p>Seine Freunde reagieren erbost und stellen ihn vor die Wahl. Entweder er hilft mit, oder sie gehen alle nachhause. Was macht Bunny?</p><br><button onclick='hilftmit()'>Bunny sieht ein, dass die Arbeit schneller erledigt ist, wenn auch er mit anpackt.</button><button onclick='allegehen()'>Bunny bleibt bei seiner Aussage und hilft weiterhin nicht mit.</button>")
+      }
+
+      function allegehen() {
+        document.getElementById("allegehen").innerHTML = ("<br><br><img src='http://sr.photos1.fotosearch.com/bthumb/CSP/CSP613/k6139422.jpg' alt='sadchildren' /><br><br><p>Ostern fällt dieses Jahr leider aus. Bunny wird bewusst, wie traurig er tausende Kinder gemacht hat.</p><br>")
+      }
+
+      function rechne() {
+        var eingabewert = document.getElementById("number").value;
+          if (eingabewert <=5){
+            document.getElementById("ergebnis").innerHTML = ("<br><br><p>Bunny ist sehr vorsichtig, aber durch die geringe Anzahl an Eiern auch sehr langsam. Bunny sollte lieber die Anzahl erhöhen, damit alles rechtzeitig fertig wird.</p><button onclick='neuezahl()'>Erhöhe die Zahl</button>");
+          }
+          else if (eingabewert >6 && eingabewert <=15){
+            document.getElementById("ergebnis").innerHTML = ("<br><br><p>Bunny hat die optimale Zahl an Eiern gefunden, die er transportieren kann. So schafft er es mit seinen Freunden, alle Ostereier rechtzeitig fertigzustellen und an die Kinder zu verteilen. Bunny ist überglücklich.</p><br><br><p>Du denkst doch nicht etwa, dass dich Bunny vergessen hat? Gehe schnell raus in den Garten und suche deine Ostergeschenke!</p></p><a href='garten.html'>Zum Garten</a>");
+          }
+          else if (eingabewert >16 && eingabewert <=50){
+            document.getElementById("ergebnis").innerHTML = ("<br><br><p>Bunny macht die Hälfte der Eier kaputt. Seine Freunde werden sauer und bringen ihn dazu, doch eine kleinere Menge zu transportieren.</p><button onclick='neuezahl()'>Erhöhe die Zahl</button>");
+          }
+          else {
+            alert ("Bitte entscheide dich für eine Zahl zwischen 1 und 50!");
+          }
+      }
+
+      function neuezahl() {
+        document.getElementById("neuezahl").innerHTML = ("<br><br><p>Bunny sucht noch die optimale Zahl an Eiern, die er problemlos tragen kann. Probiere es doch mal mit einer Zahl zwischen 6 und 15!</p><br><input id='number2' value=''><button onclick='rechne2()'>Weiter geht's</button>")
+      }
+
+      function rechne2() {
+        var eingabewert2 = document.getElementById("number2").value;
+          if (eingabewert2 >6 && eingabewert2 <=15){
+            document.getElementById("ergebnis2").innerHTML = ("<br><br><p>Bunny hat die optimale Zahl an Eiern gefunden, die er transportieren kann. So schafft er es mit seinen Freunden, alle Ostereier rechtzeitig fertigzustellen und an die Kinder zu verteilen. Bunny ist überglücklich.</p><br><br><p>Du denkst doch nicht etwa, dass dich Bunny vergessen hat? Gehe schnell raus in den Garten und suche deine Ostergeschenke!</p></p><a href='garten.html'>Zum Garten</a><br><br>");
+          }
+          else {
+            alert ("Bitte entscheide dich für eine Zahl zwischen 6 und 15, damit Bunny rechtzeitig fertig wird!");
+          }
+      }
+    </script>
+
+
+    <div id="inhalt">
+      <h1>Bunny, der kleine Osterhase</h1>
+      <img src="https://www.spreadshirt.de/image-server/v1/designs/15492050,width=178,height=178/osterhase.png" alt="bunny" /><br>
+      <p>Das ist Bunny. Bunny ist heute sehr gestresst, denn er hat gerade in seinen Kalender geschaut und festgestellt, dass in einer Woche bereits Ostern ist. Eigentlich hätte er mit den Vorbereitungen bereits vor Wochen starten müssen. Hilf Bunny, indem du ihm ansagst, was er als nächstes tun soll:</p>
+      <br>
+      <button onclick="hilfesuchen()">Hilfe suchen</button>
+      <button onclick="einkaufen()">Einkaufen gehen</button>
+      <div id="einkaufen"></div>
+      <div id="hilfesuchen"></div>
+      <div id="hilftnichtmit"></div>
+      <div id="ueberblick"></div>
+      <div id="hilftmit"></div>
+      <div id="allegehen"></div>
+      <div id="ergebnis"></div>
+      <div id="neuezahl"></div>
+      <div id="ergebnis2"></div>
+    </div>
+  </body>
+</html>
